@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
@@ -156,12 +157,17 @@ class LottieAlertDialog : AlertDialog
 
     private fun findView()
     {
+        val font_style = Typeface.createFromAsset(context.assets, "roboto.ttf")
+
         lAnimation=findViewById(R.id.lAnimation)
         tvTitle=findViewById(R.id.tvTitle)
         tvDescription=findViewById(R.id.tvDescription)
         btnPositive=findViewById(R.id.btnPositive)
+        btnPositive.setTypeface(font_style)
         btnNegative=findViewById(R.id.btnNegative)
+        btnNegative.setTypeface(font_style)
         btnNone=findViewById(R.id.btnNone)
+        btnNone.setTypeface(font_style)
         setView()
     }
 
